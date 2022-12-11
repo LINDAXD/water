@@ -9,7 +9,7 @@ public class Amenities {
         this.erved = erved;
     }
     public void status(int[] seat) {
-    	System.out.println("예약되었습니다.");
+    	System.out.println("예약이 완료되었습니다.");
 		System.out.println("------------------------------");
 		System.out.println("현재의 예약상태는 다음과 같습니다.");
 		System.out.println("------------------------------");

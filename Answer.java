@@ -165,7 +165,7 @@ public class Answer {
 			erved = input.nextInt();
 			if ( rock[erved - 1] == 0) {
 				rock[erved - 1] = 1;
-				System.out.println("예약되었습니다.");
+				System.out.println("예약이 완료되었습니다.");
 				System.out.println("------------------------------");
 				System.out.println("  현재의 예약상태는 다음과 같습니다.  ");
 				System.out.println("------------------------------");
@@ -375,7 +375,7 @@ public class Answer {
 		if(b == 1) {
 			System.out.println("휴대폰 번호를 입력해주세요.  ex)01012341234");
 			String c = scanner.next();
-			System.out.println("적립되었습니다.");
+			System.out.println("적립이 완료되었습니다.");
 			System.out.println("안녕히 가세용 ~.~");
 			System.out.println("=============================="
 					+ "==============================\n");
