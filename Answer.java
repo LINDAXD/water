@@ -114,8 +114,8 @@ for(;;) {
 		int rock[] = new int[20];
 		int chek[] = new int[10];//new로 생성 한 게 초기화
 		int erved;
-		int b=0;
-		int h=0;
+		int additional_facilities=0;
+		int towel_rental=0;
 		int total1=0;
 
 		Scanner input = new Scanner(System.in);
@@ -128,20 +128,20 @@ for(;;) {
 		System.out.println("[1] 부대시설");
 		System.out.println("[2] 대여용품");
 		System.out.println("[3] 이용안함");
-		int q = input.nextInt();
-if(q==3) {
+		int Howenter = input.nextInt();
+if(Howenter==3) {
 		System.out.println("감사합니다.");}
-else if(q==1){
+else if(Howenter==1){
 			System.out.println("부대시설을 예약하시겠습니까?");
 			System.out.println("[1] 네");
 			System.out.println("[2] 아니오");
-			int aa = input.nextInt();
-			if(aa==1){
+			int facilities = input.nextInt();
+			if(facilities==1){
 				System.out.println("이용하실 부대시설을 선택해 주세요.");
 				System.out.println("[1] 선베드 [20,000원]");
 				System.out.println("[2] 평상 [40,000원]");
 				System.out.println("[3] 카바나 [70,000원]");
-				b = input.nextInt();
+				additional_facilities = input.nextInt();
 				for (int i = 0; i < 10; i++) {      // 좌석 번호를 반복문을 통해 표현
 					System.out.print((i + 1) + " ");
 				}
@@ -154,10 +154,10 @@ else if(q==1){
 				erved = input.nextInt();
 				if (seat[erved - 1] == 0) {
 					seat[erved - 1] = 1;
-					Amenities am1 = new Amenities(b,erved); //Amenities 클래스 am1은 이름을 지어줌
+					Amenities am1 = new Amenities(additional_facilities,erved); //Amenities 클래스 am1은 이름을 지어줌
 					am1.status(seat); // am1 = amenities 클래스 안에 들어있는 status 값을 가져옴
 
-					total1 = (b*price[b-1]);
+					total1 = (price[additional_facilities-1]);
 					System.out.println("총 금액은 "+total1+"입니다.");		
 				} else if (seat[erved - 1] == 1) {
 					System.out.println("이미 예약된 좌석입니다.");
@@ -178,10 +178,10 @@ else if(q==1){
 		System.out.println("락커를 대여하시겠습니까? [4,000원]");	
 		System.out.println("[1] 네");
 		System.out.println("[2] 아니오");	
-		int e = input.nextInt();
-		if(e==1) {e=1;}else{e=0;}
+		int rock_room = input.nextInt();
+		if(rock_room==1) {rock_room=1;}else{rock_room=0;}
 		int towelSmall=0,towelBig=0;
-		if (e==1){
+		if (rock_room==1){
 			for (int i = 0; i < 10; i++) {      // 좌석 번호를 반복문을 통해 표현
 				System.out.print((i + 1) + " ");
 			}
@@ -219,9 +219,9 @@ else if(q==1){
 			System.out.println("타월을 대여하시겠습니까? [3,000원~]");	
 			System.out.println("[1] 네");
 			System.out.println("[2] 아니오");
-			h = input.nextInt();
+			towel_rental = input.nextInt();
 
-			if(h==1) {
+			if(towel_rental==1) {
 				System.out.println("대여하실 소(수건)[3,000원]의 수량을 입력해 주세요.");
 				towelSmall = input.nextInt();
 				System.out.println("대여하실 대(비치타올)[5,000원]의 수량을 입력해 주세요.");					
@@ -230,7 +230,7 @@ else if(q==1){
 
 			}
 		}
-		int total = e*4000+(towelSmall*3000) +(towelBig*5000);
+		int total = rock_room*4000+(towelSmall*3000) +(towelBig*5000);
 		
 		int total2 = total+total1;
 
@@ -238,8 +238,8 @@ else if(q==1){
 		System.out.println("원하시는 상품이 맞는지 다시 한 번 확인해 주세요.");
 		System.out.println("\t 대여하는 상품 목록");
 		System.out.println("------------------------------------------------------------");
-		if(b == 0) {System.out.println("");}else if(b == 1) {System.out.println("선베드 : "+total1+"을 선택하였습니다.");}else if(b==2) {System.out.println("평상 : "+total1+"을 선택하였습니다.");}else {System.out.println("카바나 : "+total1+"을 선택하였습니다.");}
-		if(e==0&&h==2) {System.out.println(" ");}else{System.out.println("락커 : "+ e +"개"+" / "+"타월 소(수건) : "+towelSmall+"개"+" / "+"타월 대(비치타올) : "+towelBig+"개");}
+		if(additional_facilities == 0) {System.out.println("");}else if(additional_facilities == 1) {System.out.println("선베드 : "+total1+"을 선택하였습니다.");}else if(additional_facilities==2) {System.out.println("평상 : "+total1+"을 선택하였습니다.");}else {System.out.println("카바나 : "+total1+"을 선택하였습니다.");}
+		if(rock_room==0&&towel_rental==2) {System.out.println(" ");}else{System.out.println("락커 : "+ rock_room +"개"+" / "+"타월 소(수건) : "+towelSmall+"개"+" / "+"타월 대(비치타올) : "+towelBig+"개");}
 
 
 
