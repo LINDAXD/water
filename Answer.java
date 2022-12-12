@@ -1,12 +1,42 @@
-package water_re;
+package water1;
 
 import java.util.Scanner;
 
 public class Answer {
 
 	public static void main(String[] args) {
+		int m1=0;
+		int m2=0;
+		int p1=0;
+		int p2=0;
+		
+		Scanner admission = new Scanner(System.in);
+		System.out.println("------------------------------------------------------------");
+		System.out.println("-                 물답 워터파크에 오신 것을 환영합니다.               -");
+		System.out.println("------------------------------------------------------------");
+		System.out.println("고객님의 입장권 구매방법을 선택해 주세요.");
+		System.out.println("[1] 온라인");
+		System.out.println("[2] 오프라인");
+		int adm = admission.nextInt();
+		if(adm == 1) {	
+for(;;) {
 
-		int age;
+				System.out.println("번호를 입력해 주세요.");
+				Scanner sc1 = new Scanner(System.in);
+				int aaaa = admission.nextInt();
+				System.out.println("입력하신 번호가 맞습니까? [1] 맞습니다 , [2] 아닙니다");
+				int bbbb = admission.nextInt();    
+			if(bbbb==1) {
+				System.out.println("온라인 티켓을 발급하겠습니다.");  //
+				System.out.println("------------------------------------------------------------");
+				break;
+			}
+			System.out.println("번호를 다시 입력해 주세요.");
+			}System.out.println("완료되었습니다.");
+
+		}else {
+
+			int age;
 		String[] play={"[1]블라스터", "[2]워터플렉스", "[3]부메랑고", "[4]더블스핀", "[5]레이싱", "[6]토네이도", "[7]메가스톰", "[8]튜브라이드", "[9]서핑라이드"};
 		Scanner inp = new Scanner(System.in);
 		System.out.println("구매하실 상품을 선택해 주세요.");
@@ -14,19 +44,24 @@ public class Answer {
 		System.out.println("[2]BIG 3 \n  [성인 35,000원 / 청소년 23,000원]"); // 성인 35000원 / 23000원
 		System.out.println("[3]BIG 5 \n  [성인 40,000원 / 청소년 28,000원]"); // 성인 40000원 / 28000원
 		int a = inp.nextInt();
+		
+		
+		
 		if (a == 1) {
 			//자유이용권일 때! // 성인 60000원 / 48000원
-			int m1 = 60000;
-			int m2 = 48000;
+			m1 = 60000;
+			m2 = 48000;
 			System.out.println("성인의 인원수를 입력해 주세요.");
 			Scanner number = new Scanner(System.in);
-			int p1 = number.nextInt();
+			p1 = number.nextInt();
 			System.out.println("청소년의 인원수를 입력해 주세요.");
 			Scanner number1 = new Scanner(System.in);
-			int p2 = number.nextInt();
+			p2 = number.nextInt();
 			System.out.println("성인은 " + p1 + "명, " + "청소년은 " + p2 + "명, " +
 					"총 인원수는 " + (p1 + p2) + "명이고, " + "가격은 " + (( m1 * p1 ) + ( m2 * p2 )) + "원 입니다." );
+		
 		}//BIG3일 때
+		
 		else if (a == 2) {
 			System.out.println("이용하실 어트랙션을 선택해 주세요. ");
 			Scanner num =new Scanner(System.in);
@@ -72,11 +107,11 @@ public class Answer {
 					"총 인원수는 " + ( p5 + p6 ) + "명이고, " + "총 가격은 " + (( m5 * p5 ) + ( m6 * p6 )) + "원 입니다." );
 		} else {
 			System.out.println("다시 입력해 주세요.");
-		}
+		}}
 
 		int price[] = {20000,40000,70000};
 		int seat[] = new int[10];
-		int rock[] = new int[10];
+		int rock[] = new int[20];
 		int chek[] = new int[10];//new로 생성 한 게 초기화
 		int erved;
 		int b=0;
@@ -84,17 +119,19 @@ public class Answer {
 		int total1=0;
 
 		Scanner input = new Scanner(System.in);
-		System.out.println("------------------------------");
-		System.out.println("-       부대시설 및 대여용품       -");
-		System.out.println("------------------------------");
-		System.out.println("* 10초안에 터치하지 않으시면 자동 초기화 됩니다. *");
-		System.out.println("------------------------------");
+		System.out.println("------------------------------------------------------------");
+		System.out.println("-                     부대시설 및 대여용품                       -");
+		System.out.println("------------------------------------------------------------");
+		System.out.println("              * 10초안에 터치하지 않으시면 자동 초기화 됩니다. *         ");
+		System.out.println("------------------------------------------------------------");
 		System.out.println("이용하실 상품의 번호를 입력해 주세요.");
 		System.out.println("[1] 부대시설");
 		System.out.println("[2] 대여용품");
+		System.out.println("[3] 이용안함");
 		int q = input.nextInt();
-
-		if(q==1){
+if(q==3) {
+		System.out.println("감사합니다.");}
+else if(q==1){
 			System.out.println("부대시설을 예약하시겠습니까?");
 			System.out.println("[1] 네");
 			System.out.println("[2] 아니오");
@@ -126,9 +163,10 @@ public class Answer {
 					System.out.println("이미 예약된 좌석입니다.");
 
 				}
-
 			}
-		}
+			
+		
+		}{
 		//		System.out.println("------------------------------");
 		//		System.out.println("더 원하시는 서비스가 있으십니까?");
 		//		System.out.println("[1]결제하기");
@@ -145,20 +183,13 @@ public class Answer {
 		int towelSmall=0,towelBig=0;
 		if (e==1){
 			for (int i = 0; i < 10; i++) {      // 좌석 번호를 반복문을 통해 표현
-				System.out.print(( i + 1) + "  ");
-			}
-			System.out.println();
-			for (int i : rock) {              // => for(int i = 0; i < seat.length; i++) {
-				System.out.print( i + "  ");    //       System.out.println(seat[i] + " ");
-			}
-			System.out.println();//    }
-			for (int i = 10; i < 20; i++) {      // 좌석 번호를 반복문을 통해 표현
 				System.out.print((i + 1) + " ");
 			}
 			System.out.println();
-			for (int i : rock) {              // => for(int i = 0; i < seat.length; i++) {
-				System.out.print(i + "  ");    //       System.out.println(seat[i] + " ");
-			}    
+			for (int i : seat) {              // => for(int i = 0; i < seat.length; i++) {
+				System.out.print(i + " ");    //       System.out.println(seat[i] + " ");
+			} 
+			
 			//    }
 			System.out.println();
 			System.out.print("몇 번째 자리를 예약하시겠습니까?");
@@ -166,27 +197,19 @@ public class Answer {
 			if ( rock[erved - 1] == 0) {
 				rock[erved - 1] = 1;
 				System.out.println("예약이 완료되었습니다.");
-				System.out.println("------------------------------");
+				System.out.println("------------------------------------------------------------");
 				System.out.println("  현재의 예약상태는 다음과 같습니다.  ");
-				System.out.println("------------------------------");
+				System.out.println("------------------------------------------------------------");
 
 				for (int i = 0; i < 10; i++) {      // 좌석 번호를 반복문을 통해 표현
-					System.out.print(( i + 1) + "  ");
-				}
-				System.out.println();
-				for (int i : rock) {              // => for(int i = 0; i < seat.length; i++) {
-					System.out.print( i + "  ");    //       System.out.println(seat[i] + " ");
-				}
-				System.out.println();//    }
-				for (int i = 10; i < 20; i++) {      // 좌석 번호를 반복문을 통해 표현
 					System.out.print((i + 1) + " ");
 				}
 				System.out.println();
-				for (int i : chek) {              // => for(int i = 0; i < seat.length; i++) {
-					System.out.print(i + "  ");    //       System.out.println(seat[i] + " ");
-				}
+				for (int i : seat) {              // => for(int i = 0; i < seat.length; i++) {
+					System.out.print(i + " ");    //       System.out.println(seat[i] + " ");
+				} 
 				System.out.println();
-				System.out.println("------------------------------");
+				System.out.println("------------------------------------------------------------");
 				//				} else if ( chek[erved - 1] == 1) {
 				//					System.out.println("이미 예약된 좌석입니다.");
 				//				}
@@ -208,24 +231,27 @@ public class Answer {
 			}
 		}
 		int total = e*4000+(towelSmall*3000) +(towelBig*5000);
-
+		
 		int total2 = total+total1;
 
-		System.out.println("------------------------------");
+		System.out.println("------------------------------------------------------------");
 		System.out.println("원하시는 상품이 맞는지 다시 한 번 확인해 주세요.");
 		System.out.println("\t 대여하는 상품 목록");
-		System.out.println("------------------------------");
+		System.out.println("------------------------------------------------------------");
 		if(b == 0) {System.out.println("");}else if(b == 1) {System.out.println("선베드 : "+total1+"을 선택하였습니다.");}else if(b==2) {System.out.println("평상 : "+total1+"을 선택하였습니다.");}else {System.out.println("카바나 : "+total1+"을 선택하였습니다.");}
 		if(e==0&&h==2) {System.out.println(" ");}else{System.out.println("락커 : "+ e +"개"+" / "+"타월 소(수건) : "+towelSmall+"개"+" / "+"타월 대(비치타올) : "+towelBig+"개");}
 
 
 
 		System.out.println("총 금액은 "+total2+"원 입니다.");
-		Answer.main_discount(args); 
 		//}
+		int total3=(m1*p1)+(m2+p2);
+		int total4=total2+total3;
+		
+		System.out.println("입장권까지 포함한 총 금액은 "+total4+"원 입니다.");
+		Answer.main_discount(args); 
 
-
-	}
+	}}
 
 
 
@@ -233,30 +259,26 @@ public class Answer {
 	public static void main_discount(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("=============================="
-				+ "==============================\n");
+		System.out.println("------------------------------------------------------------");
 		System.out.println("* 할인 안내 *");
 		System.out.println("- 카드 할인: 삼성, 하나, 신한, 현대, BC카드 최대 50% 할인"
 				+ "\n- 통신사 할인: LG U+ 멤버십 30% 할인"
 				+ "\n- 학생(중~고등학생, 대학(원)생) 할인: 입장권 20,000원"
 				+ "\n- 우대 할인: 65세 이상 / 장애인 / 국가유공자"
 				+ " 입장권 30,000원");
-		System.out.println("\n=============================="
-				+ "==============================\n");
+		System.out.println("------------------------------------------------------------");
 
 		System.out.println("혜택 방법을 선택해 주세요.");
 		System.out.println("[1] 카드할인\n[2] 통신사 할인\n[3] 학생 할인\n[4] 우대 할인");
 
 		int a = scanner.nextInt();
-		System.out.println("=============================="
-				+ "==============================\n");
+		System.out.println("------------------------------------------------------------");
 		for(;;) {
 			if(a == 1) {
 				Answer.main_card(args);                             // 카드로 이동.
 				break;
 			}else if(a == 2) {
-				System.out.println("=============================="
-						+ "==============================\n");
+				System.out.println("------------------------------------------------------------");
 				try {												// 딜레이 넣음.
 					System.out.println("LG U+ 멤버십 바코드를 스캔해 주세요.");
 					Thread.sleep(2000);
@@ -264,8 +286,7 @@ public class Answer {
 					e.printStackTrace();
 				}
 				System.out.println("확인이 완료되었습니다.\n");
-				System.out.println("=============================="
-						+ "==============================\n");
+				System.out.println("------------------------------------------------------------");
 
 				Answer.main_pay2(args);                             // pay(결제 수단 선택)의 두번째 메인으로 이동
 				break;
@@ -279,8 +300,7 @@ public class Answer {
 
 
 				System.out.println("\n확인이 완료되었습니다.");
-				System.out.println("=============================="
-						+ "==============================\n");
+				System.out.println("------------------------------------------------------------");
 				Answer.main_pay(args);                                  // pay(결제 수단 선택)의 첫번째 메인으로 이동
 				return;
 
@@ -292,8 +312,7 @@ public class Answer {
 					e.printStackTrace();
 				}
 				System.out.println("\n확인이 완료되었습니다.");
-				System.out.println("=============================="
-						+ "==============================\n");
+				System.out.println("------------------------------------------------------------");
 				Answer.main_pay(args);                                  // pay(결제 수단 선택)의 첫번째 메인으로 이동
 				return;
 
@@ -341,7 +360,7 @@ public class Answer {
 	public static void main_card(String[] args) {
 		int m = 120000;
 		System.out.println("결제할 금액은 " + m + "원 입니다.\n");
-
+		System.out.println("------------------------------------------------------------");
 
 		System.out.println("{카드 할인 정보} \n* 카드 할인은 1인, 일1회, 연5회 제공됩니다.\n");
 		System.out.println("- 삼성카드 : 이용권 30% 할인\n"
@@ -376,11 +395,10 @@ public class Answer {
 			System.out.println("휴대폰 번호를 입력해주세요.  ex)01012341234");
 			String c = scanner.next();
 			System.out.println("적립이 완료되었습니다.");
-			System.out.println("안녕히 가세용 ~.~");
-			System.out.println("=============================="
-					+ "==============================\n");
+			System.out.println("감사합니다.");
+			System.out.println("------------------------------------------------------------");
 		}else{
-			System.out.println("안녕히 가세용 ~.~");
+			System.out.println("감사합니다.");
 		}
 	}
 
@@ -409,8 +427,7 @@ public class Answer {
 				int SC2 = sc.nextInt();    
 				if(SC2 == 1) {
 					System.out.println("현금 영수증을 발급하겠습니다.");  //
-					System.out.println("\n=============================="
-							+ "==============================\n");
+					System.out.println("------------------------------------------------------------");
 					break;
 				}
 				System.out.println("번호를 다시 입력해 주세요.");
@@ -438,8 +455,7 @@ public class Answer {
 				break;
 			}else {
 				System.out.println("숫자를 다시 입력해 주세요.");
-				System.out.println("\n=============================="
-						+ "==============================\n");
+				System.out.println("------------------------------------------------------------");
 			}
 		}
 
@@ -457,8 +473,7 @@ public class Answer {
 		if(gift_cash_2 == total){
 			System.out.println(total + " - " + gift_cash_2 + " = " + "0" +"모두 결제가 완료되었습니다.");
 		}else {
-			System.out.println("\n=============================="
-					+ "==============================\n");
+			System.out.println("------------------------------------------------------------");
 			System.out.println("잔액은: " + (total - gift_cash_2) + "원 입니다.");
 			System.out.println("잔액 결제 수단을 선택해 주세요.");
 			Answer.main_gift_card2(args);                       // gift_card 두번째 메인으로 이동

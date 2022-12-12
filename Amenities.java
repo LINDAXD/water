@@ -1,17 +1,17 @@
-package water_re;
+package water1;
 
 public class Amenities {
-	 int b; // 부대시설
-	 int erved; //몇번째 좌석
-	 	 
-    public Amenities(int b,int erved) {
-        this.b = b;
-        this.erved = erved;
-    }
-    public void status(int[] seat) {
-    	System.out.println("예약이 완료되었습니다.");
+	int additional_facilities; // 부대시설
+	int erved; //몇번째 좌석
+	String amenities[] = {"선베드","평상","카바나"};
+	public Amenities(int additional_facilities,int erved) {
+		this.additional_facilities = additional_facilities;
+		this.erved = erved;
+	}
+	public void status(int[] seat) {
+		System.out.println("예약되었습니다.");
 		System.out.println("------------------------------");
-		System.out.println("현재의 예약상태는 다음과 같습니다.");
+		System.out.println("현재 "+amenities[this.additional_facilities-1]+" 예약상태는 다음과 같습니다.");
 		System.out.println("------------------------------");
 
 		for (int i = 0; i < 10; i++) {      // 좌석 번호를 반복문을 통해 표현
@@ -24,5 +24,5 @@ public class Amenities {
 		}    
 		System.out.println();
 		System.out.println("------------------------------");
-    }
+	}
 }
