@@ -1,12 +1,12 @@
-package water1;
+package water;
 
 public class Amenities {
 	int additional_facilities; // 부대시설
-	int erved; //몇번째 좌석
+	int re_seat; //몇번째 좌석
 	String amenities[] = {"선베드","평상","카바나"};
-	public Amenities(int additional_facilities,int erved) {
+	public Amenities(int additional_facilities,int re_seat) {
 		this.additional_facilities = additional_facilities;
-		this.erved = erved;
+		this.re_seat = re_seat;
 	}
 	public void status(int[] seat) {
 		System.out.println("예약되었습니다.");
@@ -21,7 +21,7 @@ public class Amenities {
 		for (int i : seat) {              // => for(int i = 0; i < seat.length; i++) {
 			System.out.print(i + " ");
 			//       System.out.println(seat[i] + " ");
-		}    
+		}
 		System.out.println();
 		System.out.println("------------------------------");
 	}
