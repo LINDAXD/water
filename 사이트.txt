@@ -1,0 +1,32 @@
+https://github.com/SIST-Team-A/Sist_JSP_Prj_DD_Cinema
+영화예매
+
+https://github.com/pjm529/team_library
+도서예매
+
+
+https://github.com/techhan/blueSpring
+참고사이트
+
+
+https://github.com/qkrgks456/final_Project
+차박
+
+혼공 mysql
+
+https://kjh95.tistory.com/281
+https://velog.io/@vgo_dongv/JSP-%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88
+https://kimvampa.tistory.com/272
+쇼핑몰 장바구니
+
+
+https://github.com/PostFace/Sell_and_Talk
+쇼핑몰
+
+심리테스트
+https://blog.naver.com/ndb796/220751197678 코드
+
+https://lolpersonalitytest.netlify.app/ 예시
+
+아마존에 올려야함
+
